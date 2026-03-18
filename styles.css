@@ -156,3 +156,74 @@ body {
 .contact-close:hover {
     transform: rotate(90deg);
 }
+
+/* Experience */
+
+.experience {
+    margin-top: calc(var(--nav-height) + 4rem);
+    padding: 0 2.5rem;
+    max-width: 860px;
+}
+
+.section-title {
+    font-family: 'EB Garamond', serif;
+    font-size: 1.3rem;
+    font-weight: 500;
+    color: var(--text);
+    margin-bottom: 2rem;
+}
+
+.exp-list {
+    display: flex;
+    flex-direction: column;
+}
+
+.exp-row {
+    display: flex;
+    align-items: center;
+    gap: 1.2rem;
+    padding: 1.1rem 0;
+    border-bottom: 1px solid rgba(26, 26, 24, 0.08);
+}
+
+.exp-row:first-child {
+    border-top: 1px solid rgba(26, 26, 24, 0.08);
+}
+
+.exp-logo {
+    width: 36px;
+    height: 36px;
+    border-radius: 6px;
+    object-fit: contain;
+    flex-shrink: 0;
+    background: rgba(26, 26, 24, 0.05);
+}
+
+.exp-info {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+    flex: 1;
+}
+
+.exp-company {
+    font-family: 'EB Garamond', serif;
+    font-size: 1.05rem;
+    font-weight: 500;
+    color: var(--text);
+}
+
+.exp-title {
+    font-family: 'EB Garamond', serif;
+    font-size: 0.88rem;
+    font-weight: 400;
+    color: var(--muted);
+}
+
+.exp-date {
+    font-family: 'EB Garamond', serif;
+    font-size: 0.88rem;
+    font-weight: 400;
+    color: var(--muted);
+    white-space: nowrap;
+}

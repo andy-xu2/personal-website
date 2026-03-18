@@ -1,0 +1,86 @@
+@import url('https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;1,400&family=Geist+Mono:wght@300;400&display=swap');
+
+*, *::before, *::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+:root {
+    --bg: #f5f4f0;
+    --text: #1a1a18;
+    --muted: #888884;
+    --accent: #1a1a18;
+    --nav-height: 56px;
+}
+
+body {
+    background: var(--bg);
+    color: var(--text);
+    font-family: 'Geist Mono', monospace;
+    min-height: 100vh;
+}
+
+/* Navbar */
+
+.navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: var(--nav-height);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 2.5rem;
+    background: var(--bg);
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 2.5rem;
+    align-items: center;
+}
+ 
+.nav-name {
+    font-family: 'EB Garamond', serif;
+    font-size: 1.3rem;
+    font-weight: 500;
+    letter-spacing: 0.01em;
+    color: var(--text);
+    text-decoration: none;
+    position: relative;
+    transition: color 0.2s ease;
+}
+
+.nav-links a {
+    font-family: 'EB Garamond', serif;
+    font-size: 1.15rem;
+    font-weight: 500;
+    letter-spacing: 0.01em;
+    color: var(--text);
+    text-decoration: none;
+    position: relative;
+    transition: color 0.2s ease;
+}
+ 
+/* animated underline */
+.nav-links a::after {
+    content: '';
+    position: absolute;
+    bottom: -2px;
+    left: 0;
+    width: 0;
+    height: 1px;
+    background: var(--accent);
+    transition: width 0.4s ease;
+}
+ 
+.nav-links a:hover {
+    color: var(--text);
+}
+ 
+.nav-links a:hover::after {
+    width: 100%;
+}

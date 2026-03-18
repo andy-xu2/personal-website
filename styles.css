@@ -11,7 +11,7 @@
     --text: #1a1a18;
     --muted: #888884;
     --accent: #1a1a18;
-    --nav-height: 56px;
+    --nav-height: 64px;
 }
 
 body {
@@ -36,22 +36,35 @@ body {
     background: var(--bg);
 }
 
-.nav-links {
-    list-style: none;
+.nav-left {
     display: flex;
-    gap: 2.5rem;
-    align-items: center;
+    flex-direction: column;
+    padding-top: 6px;
 }
- 
+
 .nav-name {
     font-family: 'EB Garamond', serif;
     font-size: 1.3rem;
     font-weight: 500;
     letter-spacing: 0.01em;
     color: var(--text);
-    text-decoration: none;
-    position: relative;
-    transition: color 0.2s ease;
+}
+
+.nav-subtitle {
+    font-family: 'EB Garamond', serif;
+    font-size: 0.78rem;
+    font-weight: 400;
+    color: var(--muted);
+    letter-spacing: 0.01em;
+    margin-top: 1px;
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 2.5rem;
+    align-items: center;
+    transition: opacity 0.3s ease, transform 0.3s ease;
 }
 
 .nav-links a {
@@ -64,7 +77,7 @@ body {
     position: relative;
     transition: color 0.2s ease;
 }
- 
+
 /* animated underline */
 .nav-links a::after {
     content: '';
@@ -76,17 +89,19 @@ body {
     background: var(--accent);
     transition: width 0.4s ease;
 }
- 
-.nav-links a:hover {
-    color: var(--text);
-}
- 
+
 .nav-links a:hover::after {
     width: 100%;
 }
 
-/* ── Contact Panel ───────────────────────────── */
- 
+.nav-links.hidden {
+    opacity: 0;
+    pointer-events: none;
+    transform: translateX(12px);
+}
+
+/* Contact Panel */
+
 .nav-contact {
     display: flex;
     align-items: center;
@@ -98,41 +113,30 @@ body {
     transform: translateX(12px);
     transition: opacity 0.3s ease, transform 0.3s ease;
 }
- 
+
 .nav-contact.active {
     opacity: 1;
     pointer-events: all;
     transform: translateX(0);
 }
- 
-.nav-links.hidden {
-    opacity: 0;
-    pointer-events: none;
-    transform: translateX(12px);
-    transition: opacity 0.3s ease, transform 0.3s ease;
-}
- 
-.nav-links {
-    transition: opacity 0.3s ease, transform 0.3s ease;
-}
- 
+
 .contact-icon {
     color: var(--text);
     display: flex;
     align-items: center;
     text-decoration: none;
-    transition: color 0.2s ease, transform 0.2s ease;
+    transition: transform 0.2s ease;
 }
- 
+
 .contact-icon svg {
-    width: 25px;
-    height: 25px;
+    width: 20px;
+    height: 20px;
 }
- 
+
 .contact-icon:hover {
     transform: translateY(-1px);
 }
- 
+
 .contact-close {
     background: none;
     border: none;
@@ -141,15 +145,14 @@ body {
     display: flex;
     align-items: center;
     padding: 0;
-    margin-left: 0.4rem;
-    transition: color 0.2s ease, transform 0.2s ease;
+    transition: transform 0.2s ease;
 }
- 
+
 .contact-close svg {
-    width: 25px;
-    height: 25px;
+    width: 18px;
+    height: 18px;
 }
- 
+
 .contact-close:hover {
     transform: rotate(90deg);
 }

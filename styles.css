@@ -84,3 +84,72 @@ body {
 .nav-links a:hover::after {
     width: 100%;
 }
+
+/* ── Contact Panel ───────────────────────────── */
+ 
+.nav-contact {
+    display: flex;
+    align-items: center;
+    gap: 1.6rem;
+    position: absolute;
+    right: 2.5rem;
+    opacity: 0;
+    pointer-events: none;
+    transform: translateX(12px);
+    transition: opacity 0.3s ease, transform 0.3s ease;
+}
+ 
+.nav-contact.active {
+    opacity: 1;
+    pointer-events: all;
+    transform: translateX(0);
+}
+ 
+.nav-links.hidden {
+    opacity: 0;
+    pointer-events: none;
+    transform: translateX(12px);
+    transition: opacity 0.3s ease, transform 0.3s ease;
+}
+ 
+.nav-links {
+    transition: opacity 0.3s ease, transform 0.3s ease;
+}
+ 
+.contact-icon {
+    color: var(--text);
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    transition: color 0.2s ease, transform 0.2s ease;
+}
+ 
+.contact-icon svg {
+    width: 25px;
+    height: 25px;
+}
+ 
+.contact-icon:hover {
+    transform: translateY(-1px);
+}
+ 
+.contact-close {
+    background: none;
+    border: none;
+    cursor: pointer;
+    color: var(--text);
+    display: flex;
+    align-items: center;
+    padding: 0;
+    margin-left: 0.4rem;
+    transition: color 0.2s ease, transform 0.2s ease;
+}
+ 
+.contact-close svg {
+    width: 25px;
+    height: 25px;
+}
+ 
+.contact-close:hover {
+    transform: rotate(90deg);
+}
